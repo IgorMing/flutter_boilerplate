@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Observer(builder: (BuildContext context) {
+      body: Observer(builder: (_) {
         if (store.loading) {
           return Container(
             child: Center(

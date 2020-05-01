@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:vesti_vendas/widgets/primary_button.dart';
 import 'package:vesti_vendas/widgets/text_input.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -18,17 +19,21 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: 44.0,
               width: double.infinity,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 14.0),
+              child: PrimaryButton(
+                'Entrar',
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(height: 18.0),
+            Container(
+              alignment: Alignment.centerRight,
+              child: FlatButton(
                 onPressed: () {},
                 child: Text(
-                  'Entrar',
-                  style: Theme.of(context).textTheme.button,
+                  'Esqueceu sua senha?',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.display2,
                 ),
-                color: Color.fromRGBO(48, 48, 48, 1),
               ),
             ),
           ],

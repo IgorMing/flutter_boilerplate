@@ -9,6 +9,7 @@ class AuthenticationStore = _AuthenticationStore with _$AuthenticationStore;
 
 abstract class _AuthenticationStore with Store {
   final String emptyToken = '';
+
   @observable
   AuthenticationModel auth = AuthenticationModel();
 
@@ -26,7 +27,6 @@ abstract class _AuthenticationStore with Store {
       final String token = prefs.getString('@token') ?? emptyToken;
 
       auth.setToken(token);
-      prefs.setString('@token', token);
     });
   }
 
