@@ -1,5 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vesti_vendas/data/shared_preferences/shared_preferences.dart';
 
 import 'package:vesti_vendas/models/authentication_model.dart';
 
@@ -24,7 +25,8 @@ abstract class _AuthenticationStore with Store {
     final prefs = await SharedPreferences.getInstance();
     // this future is here to simulate the latency from a http request
     Future.delayed(new Duration(milliseconds: 500), () {
-      final String token = prefs.getString('@token') ?? emptyToken;
+      final String token =
+          SharedPreferencesHelper(prefs).authToken ?? emptyToken;
 
       auth.setToken(token);
     });
@@ -35,8 +37,7 @@ abstract class _AuthenticationStore with Store {
     final prefs = await SharedPreferences.getInstance();
     const String mocked_token = '__mocked_token__';
 
-    auth.setToken(mocked_token);
-    prefs.setString('@token', mocked_token);
+    SharedPreferencesHelper(prefs).setAuthToken(mocked_token);
   }
 
   @action

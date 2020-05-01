@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:vesti_vendas/routes.dart';
 
 import 'package:vesti_vendas/screens/authenticated/home.dart';
 import 'package:vesti_vendas/screens/public/login.dart';
