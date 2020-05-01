@@ -15,20 +15,19 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Observer(builder: (BuildContext context) {
-      print('renderizou a splash');
-      if (store.loading) {
-        return Scaffold(
-          body: Container(
+    return Scaffold(
+      body: Observer(builder: (BuildContext context) {
+        print(store.auth.token);
+        if (store.loading) {
+          return Container(
             child: Center(
               child: CircularProgressIndicator(),
             ),
-          ),
-        );
-      }
+          );
+        }
 
-      print(store.auth.token);
-      return store.auth.token.isEmpty ? LoginScreen() : HomeScreen();
-    });
+        return store.auth.token.isEmpty ? LoginScreen() : HomeScreen();
+      }),
+    );
   }
 }
