@@ -10,14 +10,13 @@ class SplashScreen extends StatelessWidget {
   final store = AuthenticationStore();
 
   SplashScreen() {
-    store.signin();
+    store.checkAuth();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Observer(builder: (BuildContext context) {
-        print(store.auth.token);
         if (store.loading) {
           return Container(
             child: Center(
@@ -26,7 +25,7 @@ class SplashScreen extends StatelessWidget {
           );
         }
 
-        return store.auth.token.isEmpty ? LoginScreen() : HomeScreen();
+        return store.isAuthenticated ? HomeScreen() : LoginScreen();
       }),
     );
   }
