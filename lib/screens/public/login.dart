@@ -16,11 +16,19 @@ class LoginScreen extends StatelessWidget {
             TextInput(hintText: 'Senha'),
             SizedBox(height: 18.0),
             SizedBox(
+              height: 44.0,
               width: double.infinity,
               child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 14.0),
                 onPressed: () {},
-                child: Text('Click me'),
-                color: Colors.black,
+                child: Text(
+                  'Entrar',
+                  style: Theme.of(context).textTheme.button,
+                ),
+                color: Color.fromRGBO(48, 48, 48, 1),
               ),
             ),
           ],

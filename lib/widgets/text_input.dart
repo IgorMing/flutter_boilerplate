@@ -11,7 +11,11 @@ class TextInput extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: this.hintText,
-          border: OutlineInputBorder(),
+          border: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(2.0),
+            ),
+          ),
         ),
       ),
     );

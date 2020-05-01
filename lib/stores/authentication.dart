@@ -22,7 +22,7 @@ abstract class _AuthenticationStore with Store {
   checkAuth() async {
     final prefs = await SharedPreferences.getInstance();
     // this future is here to simulate the latency from a http request
-    Future.delayed(new Duration(seconds: 2), () {
+    Future.delayed(new Duration(milliseconds: 500), () {
       final String token = prefs.getString('@token') ?? emptyToken;
 
       auth.setToken(token);

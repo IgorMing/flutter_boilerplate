@@ -10,7 +10,15 @@ class App extends StatelessWidget {
       title: 'Vesti Vendas',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: 'futuramedium',
+        primaryColor: Color.fromRGBO(48, 48, 48, 1),
+        textTheme: TextTheme(
+          button: TextStyle(
+            color: Colors.white,
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       initialRoute: Routes.splash,
       routes: Routes.routes,
