@@ -11,3 +11,4 @@ TODO List
 - [x] reference `strings` externally (into the `constants` folder)
 - [x] externalize the `Theme` (also into `constants` folder)
 - [ ] ensure that the all authentication flow is working (including login/logout and persisting the data)
+- [ ] improve how to interact with shared preferences

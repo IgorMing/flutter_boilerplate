@@ -14,6 +14,12 @@ mixin _$AuthenticationStore on _AuthenticationStore, Store {
   @override
   bool get loading =>
       (_$loadingComputed ??= Computed<bool>(() => super.loading)).value;
+  Computed<bool> _$isAuthenticatedComputed;
+
+  @override
+  bool get isAuthenticated => (_$isAuthenticatedComputed ??=
+          Computed<bool>(() => super.isAuthenticated))
+      .value;
 
   final _$authAtom = Atom(name: '_AuthenticationStore.auth');
 
@@ -32,32 +38,31 @@ mixin _$AuthenticationStore on _AuthenticationStore, Store {
     }, _$authAtom, name: '${_$authAtom.name}_set');
   }
 
-  final _$_AuthenticationStoreActionController =
-      ActionController(name: '_AuthenticationStore');
+  final _$checkAuthAsyncAction = AsyncAction('checkAuth');
 
   @override
-  dynamic signin() {
-    final _$actionInfo = _$_AuthenticationStoreActionController.startAction();
-    try {
-      return super.signin();
-    } finally {
-      _$_AuthenticationStoreActionController.endAction(_$actionInfo);
-    }
+  Future checkAuth() {
+    return _$checkAuthAsyncAction.run(() => super.checkAuth());
   }
 
+  final _$signinAsyncAction = AsyncAction('signin');
+
   @override
-  dynamic signout() {
-    final _$actionInfo = _$_AuthenticationStoreActionController.startAction();
-    try {
-      return super.signout();
-    } finally {
-      _$_AuthenticationStoreActionController.endAction(_$actionInfo);
-    }
+  Future signin(BuildContext context) {
+    return _$signinAsyncAction.run(() => super.signin(context));
+  }
+
+  final _$signoutAsyncAction = AsyncAction('signout');
+
+  @override
+  Future signout(BuildContext context) {
+    return _$signoutAsyncAction.run(() => super.signout(context));
   }
 
   @override
   String toString() {
-    final string = 'auth: ${auth.toString()},loading: ${loading.toString()}';
+    final string =
+        'auth: ${auth.toString()},loading: ${loading.toString()},isAuthenticated: ${isAuthenticated.toString()}';
     return '{$string}';
   }
 }

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+
+import 'package:vesti_vendas/routes.dart';
+import 'package:vesti_vendas/stores/authentication.dart';
 
 import 'package:vesti_vendas/widgets/primary_button.dart';
 import 'package:vesti_vendas/widgets/text_input.dart';
@@ -7,6 +11,7 @@ import 'package:vesti_vendas/widgets/text_input.dart';
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final authStore = Provider.of<AuthenticationStore>(context);
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 18.0),
@@ -29,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               child: PrimaryButton(
                 'Entrar',
-                onPressed: () {},
+                onPressed: () => authStore.signin(context),
               ),
             ),
             SizedBox(height: 18.0),

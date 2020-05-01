@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vesti_vendas/data/shared_preferences/shared_preferences.dart';
 
 import 'package:vesti_vendas/models/authentication_model.dart';
+import 'package:vesti_vendas/routes.dart';
 
 part 'authentication.g.dart';
 
@@ -23,23 +25,29 @@ abstract class _AuthenticationStore with Store {
   @action
   checkAuth() async {
     final prefs = await SharedPreferences.getInstance();
-    // this future is here to simulate the latency from a http request
-    Future.delayed(new Duration(milliseconds: 500), () {
-      final String token =
-          SharedPreferencesHelper(prefs).authToken ?? emptyToken;
+    final String token = SharedPreferencesHelper(prefs).authToken ?? emptyToken;
 
-      auth.setToken(token);
-    });
+    auth.setToken(token);
   }
 
+  navigateToRoot(BuildContext context) =>
+      Navigator.of(context).pushReplacementNamed(Routes.splash);
+
   @action
-  signin() async {
+  signin(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
     const String mocked_token = '__mocked_token__';
 
     SharedPreferencesHelper(prefs).setAuthToken(mocked_token);
+    navigateToRoot(context);
   }
 
   @action
-  signout() => auth.token = emptyToken;
+  signout(BuildContext context) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    auth.token = emptyToken;
+    SharedPreferencesHelper(prefs).setAuthToken(emptyToken);
+    navigateToRoot(context);
+  }
 }
