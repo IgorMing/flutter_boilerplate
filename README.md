@@ -13,5 +13,6 @@ TODO List
 - [x] ensure that the all authentication flow is working (including login/logout and persisting the data)
 - [x] add a custom navigation effect for login and logout actions
 - [x] improve how to interact with shared preferences
+- [ ] change password field to the correct type (password type)
 - [ ] add validation to the login fields
 - [ ] authenticate the login with the API
