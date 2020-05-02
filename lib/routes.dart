@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:vesti_vendas/screens/public/splash.dart';
-import 'package:vesti_vendas/screens/authenticated/home.dart';
-import 'package:vesti_vendas/screens/public/login.dart';
+import 'package:flutter_boilerplate/screens/public/splash.dart';
+import 'package:flutter_boilerplate/screens/authenticated/home.dart';
+import 'package:flutter_boilerplate/screens/public/login.dart';
 
 class Routes {
   Routes._();

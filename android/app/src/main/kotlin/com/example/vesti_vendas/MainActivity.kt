@@ -1,4 +1,4 @@
-package com.example.vesti_vendas
+package com.example.flutter_boilerplate
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

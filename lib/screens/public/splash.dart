@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import 'package:vesti_vendas/screens/authenticated/home.dart';
-import 'package:vesti_vendas/screens/public/login.dart';
+import 'package:flutter_boilerplate/screens/authenticated/home.dart';
+import 'package:flutter_boilerplate/screens/public/login.dart';
 
-import 'package:vesti_vendas/stores/authentication.dart';
+import 'package:flutter_boilerplate/stores/authentication.dart';
 
 class SplashScreen extends StatelessWidget {
   final store = AuthenticationStore();

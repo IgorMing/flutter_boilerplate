@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-import 'package:vesti_vendas/stores/authentication.dart';
+import 'package:flutter_boilerplate/stores/authentication.dart';
 
-import 'package:vesti_vendas/widgets/primary_button.dart';
-import 'package:vesti_vendas/widgets/text_input.dart';
+import 'package:flutter_boilerplate/widgets/primary_button.dart';
+import 'package:flutter_boilerplate/widgets/text_input.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -17,13 +16,6 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(bottom: 41.0),
-              child: SvgPicture.asset(
-                'assets/images/logo_vesti.svg',
-                height: 83.0,
-              ),
-            ),
             TextInput(hintText: 'Email'),
             SizedBox(height: 13.0),
             TextInput(hintText: 'Senha'),

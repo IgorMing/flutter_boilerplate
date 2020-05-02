@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:vesti_vendas/constants/app_theme.dart';
-import 'package:vesti_vendas/constants/strings.dart';
-import 'package:vesti_vendas/routes.dart';
-import 'package:vesti_vendas/stores/authentication.dart';
+import 'package:flutter_boilerplate/constants/app_theme.dart';
+import 'package:flutter_boilerplate/constants/strings.dart';
+import 'package:flutter_boilerplate/routes.dart';
+import 'package:flutter_boilerplate/stores/authentication.dart';
 
 void main() => runApp(App());
 

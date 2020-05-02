@@ -1,4 +1,4 @@
-name: vesti_vendas
+name: flutter_boilerplate
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -46,8 +46,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/images/logo_vesti.svg
+  # assets:
+  #   - assets/images/icon.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
@@ -56,19 +56,19 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
-  fonts:
-    - family: futurabook
-      fonts:
-        - asset: assets/fonts/futurastd_book.otf
-    - family: futuraheavy
-      fonts:
-        - asset: assets/fonts/futurastd_heavy.otf
-    - family: futuralight
-      fonts:
-        - asset: assets/fonts/futurastd_light.otf
-    - family: futuramedium
-      fonts:
-        - asset: assets/fonts/futurastd_medium.otf
+  # fonts:
+  #   - family: futurabook
+  #     fonts:
+  #       - asset: assets/fonts/futurastd_book.otf
+  #   - family: futuraheavy
+  #     fonts:
+  #       - asset: assets/fonts/futurastd_heavy.otf
+  #   - family: futuralight
+  #     fonts:
+  #       - asset: assets/fonts/futurastd_light.otf
+  #   - family: futuramedium
+  #     fonts:
+  #       - asset: assets/fonts/futurastd_medium.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

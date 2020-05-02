@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
 
-import 'package:vesti_vendas/models/user_model.dart';
+import 'package:flutter_boilerplate/models/user_model.dart';
 
 part 'authentication_model.g.dart';
 

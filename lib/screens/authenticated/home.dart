@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:vesti_vendas/stores/authentication.dart';
+import 'package:flutter_boilerplate/stores/authentication.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

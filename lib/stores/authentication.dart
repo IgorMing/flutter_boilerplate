@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:vesti_vendas/data/shared_preferences/shared_preferences.dart';
+import 'package:flutter_boilerplate/data/shared_preferences/shared_preferences.dart';
 
-import 'package:vesti_vendas/models/authentication_model.dart';
-import 'package:vesti_vendas/routes.dart';
+import 'package:flutter_boilerplate/models/authentication_model.dart';
+import 'package:flutter_boilerplate/routes.dart';
 
 part 'authentication.g.dart';
 
