@@ -10,5 +10,6 @@ TODO List
 - [x] load the image inside login screen
 - [x] reference `strings` externally (into the `constants` folder)
 - [x] externalize the `Theme` (also into `constants` folder)
-- [ ] ensure that the all authentication flow is working (including login/logout and persisting the data)
+- [x] ensure that the all authentication flow is working (including login/logout and persisting the data)
+- [x] add a custom navigation effect for login and logout actions
 - [ ] improve how to interact with shared preferences

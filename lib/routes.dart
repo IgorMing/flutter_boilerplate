@@ -11,8 +11,10 @@ class Routes {
   static const String home = '/home';
   static const String login = '/login';
 
+  static get rootScreen => SplashScreen();
+
   static final routes = <String, WidgetBuilder>{
-    splash: (_) => SplashScreen(),
+    splash: (_) => rootScreen,
     home: (_) => HomeScreen(),
     login: (_) => LoginScreen(),
   };

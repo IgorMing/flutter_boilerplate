@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vesti_vendas/data/shared_preferences/shared_preferences.dart';
 
 import 'package:vesti_vendas/models/authentication_model.dart';
 import 'package:vesti_vendas/routes.dart';
+import 'package:vesti_vendas/screens/public/splash.dart';
 
 part 'authentication.g.dart';
 
@@ -30,8 +32,16 @@ abstract class _AuthenticationStore with Store {
     auth.setToken(token);
   }
 
-  navigateToRoot(BuildContext context) =>
-      Navigator.of(context).pushReplacementNamed(Routes.splash);
+  navigateToRoot(BuildContext context, bool loginIn) =>
+      Navigator.of(context).pushReplacement(
+        PageTransition(
+          child: Routes.rootScreen,
+          duration: Duration(milliseconds: 200),
+          type: loginIn
+              ? PageTransitionType.downToUp
+              : PageTransitionType.upToDown,
+        ),
+      );
 
   @action
   signin(BuildContext context) async {
@@ -39,7 +49,7 @@ abstract class _AuthenticationStore with Store {
     const String mocked_token = '__mocked_token__';
 
     SharedPreferencesHelper(prefs).setAuthToken(mocked_token);
-    navigateToRoot(context);
+    navigateToRoot(context, true);
   }
 
   @action
@@ -48,6 +58,6 @@ abstract class _AuthenticationStore with Store {
 
     auth.token = emptyToken;
     SharedPreferencesHelper(prefs).setAuthToken(emptyToken);
-    navigateToRoot(context);
+    navigateToRoot(context, false);
   }
 }
