@@ -12,4 +12,4 @@ TODO List
 - [x] externalize the `Theme` (also into `constants` folder)
 - [x] ensure that the all authentication flow is working (including login/logout and persisting the data)
 - [x] add a custom navigation effect for login and logout actions
-- [ ] improve how to interact with shared preferences
+- [x] improve how to interact with shared preferences
