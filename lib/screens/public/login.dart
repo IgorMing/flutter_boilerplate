@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-import 'package:vesti_vendas/routes.dart';
 import 'package:vesti_vendas/stores/authentication.dart';
 
 import 'package:vesti_vendas/widgets/primary_button.dart';
